@@ -2,7 +2,7 @@
 
 Bu proje, biyolojik bir sinir ağı mimarisini (Meyve Sineği - Drosophila Antennal Lobe) hem 3D uzayda interaktif olarak görselleştirmeyi hem de bu **biyolojik iskeleti matematiksel bir referans alarak** standart veri setleri (Örn: Breast Cancer) üzerinde çalışan hibrit bir Graph Neural Network (GNN) modeline dönüştürmeyi amaçlamaktadır.
 
-## 🚀 Projenin Temel İçerikleri
+## Projenin Temel İçerikleri
 
 Proje temel olarak 4 ana adımdan oluşmaktadır:
 
@@ -11,7 +11,7 @@ Proje temel olarak 4 ana adımdan oluşmaktadır:
 3. **`visualize.py` (2D Ağ Grafiği):** `NetworkX` ve `Matplotlib` kullanarak en güçlü bağlantıların (sinaps akışının) 2D düzlemdeki topolojik haritasını ve Degree Centrality analizini çıkarır.
 4. **`biomimetic_classifier.py` (Biomimetic GNN Modeli):** Biyolojik nöron topolojisini alıp, bir KNN grafına dönüştürür. PyTorch ve PyTorch Geometric (*PyG*) kullanarak tablo tipi (Kaggle Breast Cancer) verilerini bu doğal sinir ağı hattından geçirir (GCNConv). Biyomimetik bir yaklaşım test edilir ve **%98+** Accuracy ile başarılı sonuçlar elde edilmiştir.
 
-## 📦 Kurulum ve Gereksinimler
+## Kurulum ve Gereksinimler
 
 Proje sanal ortam (virtual environment) kullanılarak birbirinden farklı bilimsel kütüphanelerin uyumlu çalışacağı şekilde inşa edilmiştir. Terminalinizde (veya `venv` içerisinde) şu bağımlılıkları yükleyin:
 
@@ -30,7 +30,7 @@ pip install torch torchvision torchaudio
 pip install torch_geometric
 ```
 
-## 🧠 Kullanım Adımları
+## Kullanım Adımları
 
 ### 1- Bağlantı ve Nöron Meta-Verisini İndirme
 Öncelikle nöron koordinat ve bağlantılarının (`al_connectome_small.csv` ve `al_neurons_metadata.csv`) elde edilmesi gerekir. (Not: Bu aşamada `TOKEN` bilgisinin geçerli/hesabınıza ait olduğundan emin olun).
@@ -64,7 +64,7 @@ Epoch 25/25 | Train Loss: 0.0469 - Acc: 0.9912 | Val Loss: 0.1116 - Acc: 0.9825
 [INFO] Eğitim tamamlandı. Biyomimetik GNN başarıyla test edildi.
 ```
 
-## ⚙️ Model Mimarisi: Biyomimetik GNN (BiomimeticGNN)
+## Model Mimarisi: Biyomimetik GNN (BiomimeticGNN)
 
 `biomimetic_classifier.py` içindeki mimarinin yapısal tasarımı:
 * **Spatial Transformation:** $x,y,z$ biyolojik koordinatlar 5 komşulu KNN grafiği (`k=5`) ile PyTorch Tensörüne dönüştürülür.
